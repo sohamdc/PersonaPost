@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* 2. Tailwind CSS directives - MUST COME AFTER ANY @import statements */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Apply the Inter font globally */
+body {
+  font-family: "Inter", sans-serif;
+  @apply bg-gray-100 text-gray-900; /* Default light mode background and text */
+}
+
+/* Dark mode basic setup - requires a toggle in App.jsx or similar, or OS preference */
+.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Custom scrollbar styles for better UX */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #333;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
